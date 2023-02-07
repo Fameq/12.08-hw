@@ -28,8 +28,11 @@
 
 *Приведите ответ в свободной форме.*
 
-2.1 ``pg_dump database_name > backup_file.sql``
-    `pg_restore -C -d database_name backup_file.sql`
+2.1. 
+`pg_dump database_name > backup_file.sql`
+`pg_restore -C -d database_name backup_file.sql`
+
+2.2. Можно написать скрипт для резервного копирования базы данных и например с помощью cron установить автозапуск в нужное время
 
 ---
 
@@ -40,6 +43,10 @@
 3.1.* В каких случаях использование реплики будет давать преимущество по сравнению с обычным резервным копированием?
 
 *Приведите ответ в свободной форме.*
+
+3.1.
+`mysqldump --user=username --password=password --host=hostname --port=port --incremental --incremental-base=base_filename --all-databases --flush-logs --delete-master-logs --master-data=2 > backup_filename`
+
 
 ---
 
